@@ -12,9 +12,7 @@ private let reuseIdentifier = "Cell"
 class MyCollectionViewController: UICollectionViewController {
     @IBOutlet weak var UIPics: UIImageView?
     
-    private var queue = DispatchQueue(label: "image", attributes: .concurrent)
-
-    var pictures = [String]()
+    var pictures = [Lanscape]()
     
 
     override func viewDidLoad() {
@@ -24,7 +22,10 @@ class MyCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        
         
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
@@ -32,7 +33,7 @@ class MyCollectionViewController: UICollectionViewController {
         
         for item in items {
             if item.hasPrefix("nssl") {
-                pictures.append(item)
+                pictures.append(Lanscape(image: UIImage(named: item)!))
             }
         }
         
@@ -61,25 +62,9 @@ class MyCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        
-        cell.backgroundColor = self.randomColor()
-        
-        let selectedImage : String? = pictures[indexPath.row]
-        
-        
-        if let imageToLoad = selectedImage {
-            print(imageToLoad)
-            queue.async { [weak self] in
-                DispatchQueue.main.async {
-                    let yourImageView = cell as! UIImageView
-                    //Set image to ur yourImageView
-                    self?.UIPics?.image = UIImage(named: imageToLoad)
-                }
-            }
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycellID", for: indexPath) as! MyCustomCollectionViewCell
     
-                
+        cell.configure(with: pictures[indexPath.row])
         
         return cell
     }
@@ -93,12 +78,6 @@ class MyCollectionViewController: UICollectionViewController {
 
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath : IndexPath) {
-        if let vc = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController {
-            vc.selectedImage = pictures[indexPath.row]
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
     
 
     // MARK: UICollectionViewDelegate

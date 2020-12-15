@@ -27,6 +27,8 @@
 		82A1847A2587684B00F46899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82A184792587684B00F46899 /* Assets.xcassets */; };
 		82A1847D2587684B00F46899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82A1847B2587684B00F46899 /* LaunchScreen.storyboard */; };
 		82A1849425879BDD00F46899 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A1849325879BDD00F46899 /* SecondViewController.swift */; };
+		82B160FB25890DA80052C013 /* MyCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B160FA25890DA80052C013 /* MyCustomCollectionViewCell.swift */; };
+		82B160FE258911020052C013 /* Landscape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B160FD258911020052C013 /* Landscape.swift */; };
 		82FBA93F2588B2840086F377 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FBA93E2588B2840086F377 /* MyCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		82A1847C2587684B00F46899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82A1847E2587684B00F46899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82A1849325879BDD00F46899 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		82B160FA25890DA80052C013 /* MyCustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		82B160FD258911020052C013 /* Landscape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landscape.swift; sourceTree = "<group>"; };
 		82FBA93E2588B2840086F377 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +74,7 @@
 		82A184642587684A00F46899 = {
 			isa = PBXGroup;
 			children = (
+				82B160FD258911020052C013 /* Landscape.swift */,
 				82A1846F2587684A00F46899 /* CoursTest */,
 				82A1846E2587684A00F46899 /* Products */,
 			);
@@ -93,6 +98,7 @@
 				82A184722587684A00F46899 /* SceneDelegate.swift */,
 				82A184742587684A00F46899 /* ViewController.swift */,
 				82A184762587684A00F46899 /* Main.storyboard */,
+				82B160FA25890DA80052C013 /* MyCustomCollectionViewCell.swift */,
 				821C2D0D2587B59A00BD9094 /* MyTableViewController.swift */,
 				82A1849325879BDD00F46899 /* SecondViewController.swift */,
 				82A184792587684B00F46899 /* Assets.xcassets */,
@@ -200,8 +206,10 @@
 				821C2D0E2587B59A00BD9094 /* MyTableViewController.swift in Sources */,
 				82A1849425879BDD00F46899 /* SecondViewController.swift in Sources */,
 				82A184752587684A00F46899 /* ViewController.swift in Sources */,
+				82B160FE258911020052C013 /* Landscape.swift in Sources */,
 				82A184712587684A00F46899 /* AppDelegate.swift in Sources */,
 				82A184732587684A00F46899 /* SceneDelegate.swift in Sources */,
+				82B160FB25890DA80052C013 /* MyCustomCollectionViewCell.swift in Sources */,
 				821C2D2C2587BFFF00BD9094 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
